@@ -12,3 +12,6 @@ j'ai utilisé netvibes pour me permet d'optimiser ma veille technologique de fac
 Avec ces 2 outils, cela me permet de rester dans l'actualité.
 
 
+
+test
+
