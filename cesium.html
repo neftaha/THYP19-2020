@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Cesium</title>
+		<script type="text/javascript" src="js/cesium/Apps/Sandcastle/Sandcastle-header.js"></script>
+		<script type="text/javascript" src="js/cesium/Build/CesiumUnminified/Cesium.js" ></script>
+	</head>
+
+	<style>
+		@import url(js/cesium/Apps/Sandcastle/templates/bucket.css);
+	</style>
+	
+	<div id="cesiumContainer" class="fullSize"></div>
+	<div id="loadingOverlay"><h1>Loading...</h1></div>
+	<div id="toolbar"></div>
+	
+
+	<script id="cesium_sandcastle_script">
+	
+		Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyYTEyNzdmZS02ODM2LTQ4MGMtOTk3MS00ZDUwMDkzODNiNjMiLCJpZCI6MTc3NzcsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzI4MTcyNjd9.5qOZVp19Hs6x6QgLmWz4k2hL09yXzVW2ALlSRP2b6wQ'		
+		var viewer = new Cesium.Viewer('cesiumContainer');
+		
+		// If > 50 : YELLOW
+		// IF > 25 && < 50 BLUE
+		// IF > 10 && < 25 PURPLE
+		// IF > 0
+		
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Morocco.json', {
+			stroke: Cesium.Color.YELLOW,
+			fill: Cesium.Color.RED.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Bolivia.json', {
+			stroke: Cesium.Color.BLUE,
+			fill: Cesium.Color.RED.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Canada.json', {
+			stroke: Cesium.Color.PURPLE,
+			fill: Cesium.Color.CHARTREUSE.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/China.json', {
+			stroke: Cesium.Color.HOTPINK,
+			fill: Cesium.Color.DARKGOLDENROD.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Colombia.json', {
+			stroke: Cesium.Color.HOTPINK,
+			fill: Cesium.Color.BLUE.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Belgium.json', {
+			stroke: Cesium.Color.HOTPINK,
+			fill: Cesium.Color.BLUE.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Switzerland.json', {
+			stroke: Cesium.Color.HOTPINK,
+			fill: Cesium.Color.BLUE.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+
+		
+		
+	</script>
+	
+	
+</html>
